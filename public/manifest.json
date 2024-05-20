@@ -1,0 +1,20 @@
+{
+  "name": "Arman Gohari Portfolio Website",
+  "short_name": "Arman Gohari",
+  "description": "Welcome to Arman Gohari Portfolio Website.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "./assets/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

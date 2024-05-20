@@ -1,0 +1,29 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Block the following directories and files
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+
+# Block specific file types from being indexed
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /*.env$
+Disallow: /*.log$
+
+# Block access to the development environment
+Disallow: /_next/
+Disallow: /static/
+
+# Block access to specific query parameters
+Disallow: /*?sessionid
+Disallow: /*?token
+
+# Allow the entire site except for disallowed paths
+Allow: /
+
+# Specify the location of the sitemap
+Sitemap: https://armangohari.com/sitemap.xml
