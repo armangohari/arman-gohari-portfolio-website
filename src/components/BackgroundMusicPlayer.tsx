@@ -5,10 +5,11 @@ import { useEffect, useRef, useState } from "react";
 
 export default function BackgroundMusicPlayer() {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const audioRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     const audioElement = audioRef.current;
+    if (!audioElement) return;
 
     const handlePlay = () => {
       if (isPlaying) {
