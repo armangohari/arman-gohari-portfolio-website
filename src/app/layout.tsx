@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${calistoga.className} bg-black`}>{children}</body>
+      <body className={`${calistoga.className} bg-black text-white`}>{children}</body>
     </html>
   );
 }
