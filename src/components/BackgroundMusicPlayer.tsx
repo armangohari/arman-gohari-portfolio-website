@@ -4,9 +4,17 @@ import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 
 export default function BackgroundMusicPlayer() {
+  // State variable to track whether the music is currently playing.
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+
+  // Ref object to hold a reference to the HTML audio element.
   const audioRef = useRef<HTMLAudioElement>(null);
 
+  /**
+   * Effect hook to handle playing and pausing the music.
+   * Adds a click event listener to the document to toggle play/pause.
+   * Removes the event listener when the component is unmounted.
+   */
   useEffect(() => {
     const audioElement = audioRef.current;
     if (!audioElement) return;
@@ -24,8 +32,8 @@ export default function BackgroundMusicPlayer() {
     // Add event listener for audio play
     document.addEventListener("click", handlePlay);
 
+    // Clean up function to remove event listener
     return () => {
-      // Remove event listener for audio play
       document.removeEventListener("click", handlePlay);
     };
   }, [isPlaying]);
