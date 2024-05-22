@@ -42,14 +42,14 @@ export default function BackgroundMusicPlayer() {
       </audio>
 
       {/* Audio Play Info */}
-      <div className="relative">
+      <div className="relative flex flex-col items-center justify-center gap-12">
         <span className="gold-gradient-text font-bold tracking-widest">
-          click anywhere to {isPlaying ? "pause" : "play"}
+          volume up / tap anywhere to {isPlaying ? "pause" : "play"}
         </span>
         <span
           className={clsx(
-            "absolute -right-3 top-0 h-2 w-2 animate-ping rounded-full border-2 border-white bg-primary",
-            isPlaying && "hidden",
+            "h-10 w-10 rounded-full border-2 border-white bg-black",
+            isPlaying ? "invisible" : "animate-ping",
           )}
         />
       </div>
