@@ -1,4 +1,4 @@
-import { calistoga } from "@/lib/fonts";
+import { italiana } from "@/lib/fonts";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 
@@ -41,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${calistoga.className} bg-black text-white`}>
+      <body className={`${italiana.className} bg-black text-white`}>
         {children}
       </body>
     </html>

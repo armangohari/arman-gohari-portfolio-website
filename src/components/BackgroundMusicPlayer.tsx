@@ -51,8 +51,8 @@ export default function BackgroundMusicPlayer() {
 
       {/* Audio Play Info */}
       <div className="relative flex flex-col items-center justify-center gap-12">
-        <span className="cyan-gradient-text font-bold tracking-widest">
-          volume up / tap anywhere to {isPlaying ? "pause" : "play"}
+        <span className="cyan-gradient-text font-bold text-xl tracking-widest">
+          volume up & tap anywhere to {isPlaying ? "pause" : "play"}
         </span>
         <span
           className={clsx(

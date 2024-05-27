@@ -9,7 +9,7 @@ export default function ComingSoon() {
         {/* Icon */}
         <Image src={cogGif} alt="cog" className="h-7 w-7" />
         {/* Loading Text */}
-        <h2 className="text-2xl tracking-wider">Coming Soon</h2>
+        <h2 className="text-3xl tracking-wider">Coming Soon</h2>
       </div>
 
       {/* Circular Motion Orbs */}
