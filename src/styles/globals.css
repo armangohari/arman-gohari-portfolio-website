@@ -4,10 +4,10 @@
 
 /* Root Variables */
 :root {
-  --primary: #ffcc00;
+  --primary: #018ea1;
 }
 
 /* Backgrounds */
-.gold-gradient-text {
-  @apply bg-gradient-to-r from-[#f2c511] via-[#f39c19] to-[#c0382b] bg-clip-text text-transparent;
+.cyan-gradient-text {
+  @apply bg-gradient-to-r from-cyan-400 to-primary bg-clip-text text-transparent;
 }

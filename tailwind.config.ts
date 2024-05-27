@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#ffcc00",
+        primary: "#018ea1",
       },
       keyframes: {
         orbit: {
