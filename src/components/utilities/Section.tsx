@@ -1,5 +1,5 @@
 import { cn } from "@/utils/helpers";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import SectionOrb from "./SectionOrb";
 import { italiana } from "@/lib/fonts";
 
