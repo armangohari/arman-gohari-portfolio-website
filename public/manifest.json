@@ -1,20 +1,23 @@
 {
-  "name": "Arman Gohari Portfolio Website",
-  "short_name": "Arman Gohari",
-  "description": "Welcome to Arman Gohari Portfolio Website.",
+  "name": "Arman Gohari - Portfolio Website",
+  "short_name": "Arman Gohari Portfolio",
+  "description": "Explore the portfolio of Arman Gohari. Showcasing his skills, interests, tools and contact information. Get to know him more now!",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#111111",
-  "theme_color": "#000000",
+  "background_color": "#0e0e0e",
+  "theme_color": "#ffa800",
   "orientation": "portrait",
   "scope": "/",
+  "lang": "en-US",
+  "categories": ["portfolio", "personal", "developer", "designer", "brand"],
   "icons": [
     {
-      "src": "./assets/icons/icon-128x128.png",
+      "src": "./favicon.ico",
       "sizes": "128x128",
-      "type": "image/png"
+      "type": "image/ico"
     }
   ],
   "related_applications": [],
-  "prefer_related_applications": false
+  "prefer_related_applications": false,
+  "display_override": ["standalone", "minimal-ui", "dark-theme"]
 }

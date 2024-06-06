@@ -1,10 +1,12 @@
-import { italiana } from "@/lib/fonts";
+import { poppins } from "@/lib/fonts";
 import "@/styles/globals.css";
+import { cn } from "@/utils/helpers";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Arman Gohari",
-  description: "Arman Gohari Portfolio Website",
+  title: "Arman Gohari - Portfolio Website",
+  description:
+    "Explore the portfolio of Arman Gohari. Showcasing his skills, interests, tools and contact information. Get to know him more now!",
   keywords: [
     "Arman Gohari",
     "Arman Gohari Website",
@@ -41,7 +43,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${italiana.className} bg-black text-white`}>
+      <body
+        className={cn(
+          poppins.className,
+          "bg-smooth-black font-extralight tracking-wider text-smooth-white",
+        )}
+      >
         {children}
       </body>
     </html>

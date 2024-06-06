@@ -1,10 +1,12 @@
-import { Calistoga, Italiana, Poppins } from "next/font/google";
+import { Italiana, Poppins } from "next/font/google";
 import local from "next/font/local";
 
 /* English Fonts */
-export const calistoga = Calistoga({ subsets: ["latin"], weight: "400" });
-export const poppins = Poppins({ subsets: ["latin"], weight: "400" });
 export const italiana = Italiana({ subsets: ["latin"], weight: "400" });
+export const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 /* Persian Fonts */
 export const iranSans = local({
