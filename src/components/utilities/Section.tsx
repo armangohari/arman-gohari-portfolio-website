@@ -1,5 +1,7 @@
+"use client";
+
 import { cn } from "@/utils/helpers";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import SectionOrb from "./SectionOrb";
 import { italiana } from "@/lib/fonts";
 
@@ -16,8 +18,21 @@ export default function Section({
   tabId,
   children,
 }: SectionProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const innerHeight = window.innerHeight;
+    const sectionElement = sectionRef.current;
+    if (sectionElement) {
+      sectionElement.style.height = `${innerHeight}px`;
+    }
+  }, []);
+
   return (
-    <section className="relative h-screen w-full px-[5vw] sm:px-[10vw]">
+    <section
+      ref={sectionRef}
+      className="relative h-full w-full px-[5vw] sm:px-[10vw]"
+    >
       {/* Blurred Orb - right/left align based on `orbDirection` prop */}
       <div
         className={cn(
