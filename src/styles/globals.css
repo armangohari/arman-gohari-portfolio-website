@@ -4,10 +4,24 @@
 
 /* Root Variables */
 :root {
-  --primary: #018ea1;
+  --primary: #ffa800;
+  --smooth-black: #0e0e0e;
+  --smooth-gray: #999999;
+  --smooth-white: #eeeeee;
 }
 
-/* Backgrounds */
-.cyan-gradient-text {
-  @apply bg-gradient-to-r from-cyan-400 to-primary bg-clip-text text-transparent;
+/* Text Selection */
+::selection {
+  color: var(--primary);
+  background-color: transparent;
+}
+
+/* Scrollbar */
+* {
+  scrollbar-width: none;
+}
+
+/* Links */
+.link {
+  @apply transition-all hover:scale-105 hover:font-extralight hover:brightness-125 active:scale-95 active:font-thin active:brightness-75;
 }

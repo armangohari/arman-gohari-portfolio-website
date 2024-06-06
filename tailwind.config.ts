@@ -9,7 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#018ea1",
+        primary: "#ffa800",
+        "smooth-black": "#0e0e0e",
+        "smooth-gray": "#999999",
+        "smooth-white": "#eeeeee",
       },
       keyframes: {
         orbit: {
