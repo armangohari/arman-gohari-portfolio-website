@@ -17,7 +17,7 @@ export default function Section({
   children,
 }: SectionProps) {
   return (
-    <section className="relative h-full w-full px-[5vw] sm:px-[10vw]">
+    <section className="relative h-[100dvh] w-full px-[5vw] sm:px-[10vw]">
       {/* Blurred Orb - right/left align based on `orbDirection` prop */}
       <div
         className={cn(
