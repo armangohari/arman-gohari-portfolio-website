@@ -21,7 +21,7 @@ export default function Section({
       {/* Blurred Orb - right/left align based on `orbDirection` prop */}
       <div
         className={cn(
-          "absolute -top-24",
+          "absolute -top-24 max-sm:scale-75",
           orbDirection === "left" && "-left-24",
           orbDirection === "right" && "-right-24",
         )}
