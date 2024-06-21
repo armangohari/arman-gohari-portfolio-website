@@ -9,10 +9,6 @@ type interestStackType = {
 
 const interestStack: interestStackType[] = [
   {
-    title: "Art",
-    interests: ["Architecture", "UI / UX Design", "Guitar & Music"],
-  },
-  {
     title: "Technology",
     interests: [
       "Virtual Reality",
@@ -21,8 +17,12 @@ const interestStack: interestStackType[] = [
     ],
   },
   {
+    title: "Art",
+    interests: ["Architecture", "UI / UX Design", "Guitar & Music"],
+  },
+  {
     title: "Science",
-    interests: ["Geometry", "Astronomy", "Psychology"],
+    interests: ["Astronomy", "Psychology", "Neuroscience"],
   },
   {
     title: "Finance",
