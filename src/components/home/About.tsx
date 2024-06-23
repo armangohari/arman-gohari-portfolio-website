@@ -45,7 +45,7 @@ export default function About() {
       <h4 className={cn(italiana.className, "text-4xl sm:text-6xl")}>
         Interests
       </h4>
-      <div className="mt-[7vh] grid grid-cols-2 items-start justify-between gap-y-[4vh] sm:flex sm:gap-[5vw]">
+      <div className="mt-[7vh] grid w-full grid-cols-2 items-start justify-between gap-y-[4vh] sm:flex sm:gap-[5vw]">
         {/* Interests */}
         {interestStack.map(({ title, interests }: interestStackType) => (
           <div

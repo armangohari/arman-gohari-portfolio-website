@@ -34,7 +34,7 @@ export default function Tools() {
   return (
     <Section title="Tools" orbDirection="right" tabId={4}>
       {/* Tools Showcase */}
-      <div className="mt-[7vh] grid grid-cols-3 items-start justify-between gap-[7vw] gap-y-[7vh] sm:mt-[15vh] sm:flex">
+      <div className="mt-[7vh] grid w-full grid-cols-3 items-start justify-between gap-[7vw] gap-y-[7vh] sm:mt-[15vh] sm:flex">
         {/* Tools */}
         {toolStack.map(({ title, tools }: toolStackType) => (
           <div
