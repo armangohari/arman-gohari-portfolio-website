@@ -1,9 +1,11 @@
+"use client";
+
 import { italiana } from "@/lib/fonts";
 import { cn } from "@/utils/helpers";
+import { motion } from "framer-motion";
 import { ReactNode } from "react";
 import Navigation from "./Navigation";
 import SectionOrb from "./SectionOrb";
-import ClientSection from "./ClientSection";
 
 type SectionProps = {
   title: string;
@@ -21,11 +23,12 @@ export default function Section({
   return (
     <section className="relative h-[100dvh] w-full">
       {/* Desktop Tab Navigation - Left Side */}
-      <div className="absolute bottom-0 left-10 top-0 grid place-items-center max-sm:hidden">
+      <aside className="absolute bottom-0 left-10 top-0 grid place-items-center max-sm:hidden">
         <Navigation tabId={tabId} />
-      </div>
+      </aside>
 
-      <div className="mx-auto max-w-6xl px-[5vw] sm:px-[2vw]">
+      {/* Main Section Container */}
+      <main className="mx-auto max-w-6xl px-[5vw] sm:px-[2vw]">
         {/* Blurred Orb - right/left align based on `orbDirection` prop */}
         <div
           className={cn(
@@ -48,16 +51,20 @@ export default function Section({
         </div>
 
         {/* Children */}
-        <ClientSection>
+        <motion.div
+          className="grid place-items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, ease: "easeInOut" }}
+        >
           {children}
-        </ClientSection>
-
+        </motion.div>
 
         {/* Mobile Tab Navigation - Left Side */}
         <div className="absolute bottom-[2vh] left-0 right-0 sm:hidden">
           <Navigation tabId={tabId} />
         </div>
-      </div>
+      </main>
     </section>
   );
 }
