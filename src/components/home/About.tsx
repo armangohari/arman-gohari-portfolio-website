@@ -26,7 +26,7 @@ const interestStack: interestStackType[] = [
   },
   {
     title: "Finance",
-    interests: ["Crypto Trade", "Crypto Investment", "Financial Management"],
+    interests: ["Crypto Trade", "Crypto Investment", "Wealth Management"],
   },
 ];
 
