@@ -1,41 +1,60 @@
+"use client";
+
 import { italiana } from "@/lib/fonts";
 import { cn } from "@/utils/helpers";
 import HeroOrb from "../utilities/HeroOrb";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
     <section className="relative h-screen w-full">
       {/* Top Right Orb */}
-      <div className="absolute -top-10 right-10 max-sm:hidden">
+      <aside className="absolute -top-10 right-10 max-sm:hidden">
         <HeroOrb />
-      </div>
+      </aside>
 
       {/* Middle Left Orb */}
-      <div className="absolute -left-10 top-72 max-sm:scale-75">
+      <aside className="absolute -left-10 top-72 max-sm:scale-75">
         <HeroOrb />
-      </div>
+      </aside>
 
       {/* Title */}
-      <div
+      <header
         className={cn(
           italiana.className,
           "relative h-screen w-full text-[11vh] sm:text-[18vw]",
         )}
       >
-        <h1 className="absolute left-[10vw] top-[30vh] sm:left-10 sm:top-[2vh]">
+        <motion.h1
+          className="absolute left-[10vw] top-[30vh] sm:left-10 sm:top-[2vh]"
+          initial={{ opacity: 0, x: -25 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
           Arman
-        </h1>
-        <h1 className="absolute bottom-[35vh] right-[10vw] sm:bottom-[2vh] sm:right-10">
+        </motion.h1>
+        <motion.h1
+          className="absolute bottom-[35vh] right-[10vw] sm:bottom-[2vh] sm:right-10"
+          initial={{ opacity: 0, x: 25 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+        >
           Gohari
-        </h1>
-      </div>
+        </motion.h1>
+      </header>
 
-      {/* Position Headlines */}
-      <div className="absolute bottom-[5vh] left-[10vw] sm:bottom-0 sm:left-0 sm:p-10">
+      {/* Position Headline */}
+      <motion.div
+        className="absolute bottom-[5vh] left-[10vw] sm:bottom-0 sm:left-0 sm:p-10"
+        initial={{ opacity: 0, x: -25 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
+        viewport={{ amount: 0.1 }}
+      >
         <h2 className="text-smooth-gray sm:text-xl">
           Web Designer & Developer
         </h2>
-      </div>
+      </motion.div>
     </section>
   );
 }

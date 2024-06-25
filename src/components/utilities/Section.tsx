@@ -41,14 +41,18 @@ export default function Section({
         </div>
 
         {/* Section Header Title */}
-        <header
+        <motion.header
           className={cn(
             italiana.className,
             "flex w-full items-center justify-center pb-[7vh] pt-[5vh]",
           )}
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, ease: "easeInOut" }}
+          viewport={{ amount: 0.1 }}
         >
           <h3 className="text-7xl sm:text-9xl">{title}</h3>
-        </header>
+        </motion.header>
 
         {/* Children */}
         <motion.main
