@@ -1,6 +1,6 @@
 {
-  "name": "my-next-app-template",
-  "version": "0.1.0",
+  "name": "arman-gohari-portfolio-website",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
