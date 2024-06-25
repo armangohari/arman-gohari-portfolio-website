@@ -51,14 +51,14 @@ export default function Section({
         </header>
 
         {/* Children */}
-        <motion.div
+        <motion.main
           className="grid place-items-center"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ease: "easeInOut" }}
         >
           {children}
-        </motion.div>
+        </motion.main>
 
         {/* Mobile Tab Navigation - Left Side */}
         <footer className="absolute bottom-[2vh] left-0 right-0 sm:hidden">
