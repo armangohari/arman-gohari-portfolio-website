@@ -1,6 +1,7 @@
 import { italiana } from "@/lib/fonts";
 import { cn } from "@/utils/helpers";
 import { ReactNode } from "react";
+import Navigation from "./Navigation";
 import SectionOrb from "./SectionOrb";
 
 type SectionProps = {
@@ -17,30 +18,42 @@ export default function Section({
   children,
 }: SectionProps) {
   return (
-    <section className="relative mx-auto h-[100dvh] max-w-6xl px-[5vw] sm:px-[2vw]">
-      {/* Blurred Orb - right/left align based on `orbDirection` prop */}
-      <div
-        className={cn(
-          "absolute -top-24 max-sm:scale-75",
-          orbDirection === "left" && "-left-24",
-          orbDirection === "right" && "-right-24",
-        )}
-      >
-        <SectionOrb />
+    <section className="relative h-[100dvh] w-full">
+      {/* Desktop Tab Navigation - Left Side */}
+      <div className="absolute bottom-0 left-10 top-0 grid place-items-center max-sm:hidden">
+        <Navigation tabId={tabId} />
       </div>
 
-      {/* Title */}
-      <div
-        className={cn(
-          italiana.className,
-          "flex w-full items-center justify-center pb-[7vh] pt-[5vh]",
-        )}
-      >
-        <h3 className="text-7xl sm:text-9xl">{title}</h3>
-      </div>
+      <div className="mx-auto max-w-6xl px-[5vw] sm:px-[2vw]">
+        {/* Blurred Orb - right/left align based on `orbDirection` prop */}
+        <div
+          className={cn(
+            "absolute -top-24 max-sm:scale-75",
+            orbDirection === "left" && "-left-24",
+            orbDirection === "right" && "-right-24",
+          )}
+        >
+          <SectionOrb />
+        </div>
 
-      {/* Children */}
-      <div className="grid place-items-center">{children}</div>
+        {/* Title */}
+        <div
+          className={cn(
+            italiana.className,
+            "flex w-full items-center justify-center pb-[7vh] pt-[5vh]",
+          )}
+        >
+          <h3 className="text-7xl sm:text-9xl">{title}</h3>
+        </div>
+
+        {/* Children */}
+        <div className="grid place-items-center">{children}</div>
+
+        {/* Mobile Tab Navigation - Left Side */}
+        <div className="absolute bottom-[2vh] left-0 right-0 sm:hidden">
+          <Navigation tabId={tabId} />
+        </div>
+      </div>
     </section>
   );
 }

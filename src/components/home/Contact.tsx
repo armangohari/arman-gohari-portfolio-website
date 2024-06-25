@@ -42,7 +42,7 @@ const contacts: contactType[] = [
 
 export default function Contact() {
   return (
-    <Section title="Contact" orbDirection="left" tabId={5}>
+    <Section title="Contact" orbDirection="left" tabId={4}>
       <div className="relative mt-[7vh] h-[65vh] w-full sm:mt-[3vh]">
         {/* Contacts Showcase */}
         <div className="flex flex-col items-center justify-between gap-[5vh]">

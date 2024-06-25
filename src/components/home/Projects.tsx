@@ -39,14 +39,14 @@ const projects: projectType[] = [
 export default function Projects() {
   // fix: complete
   return (
-    <Section title="Projects" orbDirection="left" tabId={3}>
+    <Section title="Projects" orbDirection="left" tabId={2}>
       {/* Project Showcase */}
       <div className="z-10 mt-[3vh] flex w-full items-center justify-between gap-[3vmax] max-sm:flex-col">
         {/* Projects */}
         {projects.map(({ id, image, title, desc, url }: projectType) => (
           <div
             key={id}
-            className="grid h-[22vh] w-full place-items-center rounded-xl bg-black/20 sm:h-[60vh]"
+            className="grid h-[21.5vh] w-full place-items-center rounded-xl bg-black/20 sm:h-[60vh]"
           >
             <span className="animate-pulse text-smooth-gray max-sm:text-sm sm:rotate-[-30deg]">
               Coming Soon

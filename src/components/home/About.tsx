@@ -32,9 +32,9 @@ const interestStack: interestStackType[] = [
 
 export default function About() {
   return (
-    <Section title="About" orbDirection="right" tabId={2}>
+    <Section title="About" orbDirection="right" tabId={1}>
       {/* About Me Description */}
-      <div className="mb-[10vh] w-[320px] sm:w-[525px]">
+      <div className="mb-[7vh] w-[320px] sm:w-[525px]">
         <p className="text-center text-sm font-thin sm:text-2xl">
           Eager to explore, learn, and create; always tried to follow my passion
           which led me to so many great things so far.
