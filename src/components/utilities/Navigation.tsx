@@ -8,7 +8,7 @@ export default function Navigation({ tabId }: NavigationProps) {
   const numOfSections = 4;
 
   return (
-    <div className="flex items-center justify-center gap-2 sm:flex-col sm:gap-3">
+    <nav className="flex items-center justify-center gap-2 sm:flex-col sm:gap-3">
       {Array.from({ length: numOfSections }).map((_, i) => (
         <span
           key={i}
@@ -19,6 +19,6 @@ export default function Navigation({ tabId }: NavigationProps) {
           )}
         ></span>
       ))}
-    </div>
+    </nav>
   );
 }
