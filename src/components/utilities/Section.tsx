@@ -3,6 +3,7 @@ import { cn } from "@/utils/helpers";
 import { ReactNode } from "react";
 import Navigation from "./Navigation";
 import SectionOrb from "./SectionOrb";
+import ClientSection from "./ClientSection";
 
 type SectionProps = {
   title: string;
@@ -47,7 +48,10 @@ export default function Section({
         </div>
 
         {/* Children */}
-        <div className="grid place-items-center">{children}</div>
+        <ClientSection>
+          {children}
+        </ClientSection>
+
 
         {/* Mobile Tab Navigation - Left Side */}
         <div className="absolute bottom-[2vh] left-0 right-0 sm:hidden">

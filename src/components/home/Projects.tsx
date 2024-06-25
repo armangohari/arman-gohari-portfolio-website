@@ -1,7 +1,11 @@
+"use client";
+
 import Image, { StaticImageData } from "next/image";
 import Section from "../utilities/Section";
 import Link from "next/link";
 import { cn } from "@/utils/helpers";
+import { motion } from "framer-motion";
+import { containerVariants, itemVariants } from "@/lib/framerAnimationConstants";
 
 type projectType = {
   id: number;
@@ -37,16 +41,21 @@ const projects: projectType[] = [
 ];
 
 export default function Projects() {
-  // fix: complete
   return (
     <Section title="Projects" orbDirection="left" tabId={2}>
       {/* Project Showcase */}
-      <div className="z-10 mt-[3vh] flex w-full items-center justify-between gap-[3vmax] max-sm:flex-col">
+      <motion.div
+        className="z-10 mt-[3vh] flex w-full items-center justify-between gap-[3vmax] max-sm:flex-col"
+        initial="hidden"
+        whileInView="visible"
+        variants={containerVariants}
+      >
         {/* Projects */}
         {projects.map(({ id, image, title, desc, url }: projectType) => (
-          <div
+          <motion.div
             key={id}
             className="grid h-[21.5vh] w-full place-items-center rounded-xl bg-black/20 sm:h-[60vh]"
+            variants={itemVariants}
           >
             <span className="animate-pulse text-smooth-gray max-sm:text-sm sm:rotate-[-30deg]">
               Coming Soon
@@ -59,9 +68,9 @@ export default function Projects() {
               // Project Description
               <p>{desc}</p>
             </Link> */}
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </Section>
   );
 }

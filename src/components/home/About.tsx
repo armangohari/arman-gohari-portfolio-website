@@ -1,6 +1,13 @@
+"use client";
+
 import { italiana } from "@/lib/fonts";
-import Section from "../utilities/Section";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/lib/framerAnimationConstants";
 import { cn } from "@/utils/helpers";
+import { motion } from "framer-motion";
+import Section from "../utilities/Section";
 
 type interestStackType = {
   title: string;
@@ -45,12 +52,18 @@ export default function About() {
       <h4 className={cn(italiana.className, "text-4xl sm:text-6xl")}>
         Interests
       </h4>
-      <div className="mt-[7vh] grid w-full grid-cols-2 items-start justify-between gap-y-[4vh] sm:flex sm:gap-[5vw]">
+      <motion.div
+        className="mt-[7vh] grid w-full grid-cols-2 items-start justify-between gap-y-[4vh] sm:flex sm:gap-[5vw]"
+        initial="hidden"
+        whileInView="visible"
+        variants={containerVariants}
+      >
         {/* Interests */}
         {interestStack.map(({ title, interests }: interestStackType) => (
-          <div
+          <motion.div
             key={title}
             className="flex flex-col items-start justify-between gap-[2.5vh]"
+            variants={itemVariants}
           >
             {/* interestStack Title */}
             <h5
@@ -64,9 +77,9 @@ export default function About() {
                 {tool}
               </h6>
             ))}
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </Section>
   );
 }

@@ -1,6 +1,13 @@
-import { cn } from "@/utils/helpers";
-import Section from "../utilities/Section";
+"use client";
+
 import { italiana } from "@/lib/fonts";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/lib/framerAnimationConstants";
+import { cn } from "@/utils/helpers";
+import { motion } from "framer-motion";
+import Section from "../utilities/Section";
 
 type toolStackType = {
   title: string;
@@ -34,12 +41,18 @@ export default function Tools() {
   return (
     <Section title="Tools" orbDirection="right" tabId={3}>
       {/* Tools Showcase */}
-      <div className="mt-[7vh] grid w-full grid-cols-3 items-start justify-between gap-[7vw] gap-y-[7vh] sm:mt-[15vh] sm:flex">
+      <motion.div
+        className="mt-[7vh] grid w-full grid-cols-3 items-start justify-between gap-[7vw] gap-y-[7vh] sm:mt-[15vh] sm:flex"
+        initial="hidden"
+        whileInView="visible"
+        variants={containerVariants}
+      >
         {/* Tools */}
         {toolStack.map(({ title, tools }: toolStackType) => (
-          <div
+          <motion.div
             key={title}
             className="flex flex-col items-start justify-between gap-[2.5vh]"
+            variants={itemVariants}
           >
             {/* ToolStack Title */}
             <h5
@@ -53,9 +66,9 @@ export default function Tools() {
                 {tool}
               </h6>
             ))}
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </Section>
   );
 }

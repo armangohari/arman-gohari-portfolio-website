@@ -1,3 +1,10 @@
+"use client";
+
+import {
+  containerVariants,
+  itemVariants,
+} from "@/lib/framerAnimationConstants";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Section from "../utilities/Section";
 
@@ -45,18 +52,24 @@ export default function Contact() {
     <Section title="Contact" orbDirection="left" tabId={4}>
       <div className="relative mt-[7vh] h-[65vh] w-full sm:mt-[3vh]">
         {/* Contacts Showcase */}
-        <div className="flex flex-col items-center justify-between gap-[5vh]">
+        <motion.div
+          className="flex flex-col items-center justify-between gap-[5vh]"
+          initial="hidden"
+          whileInView="visible"
+          variants={containerVariants}
+        >
           {/* Contacts */}
           {contacts.map(({ type, title, url }: contactType) => (
-            <Link
-              key={type}
-              href={url}
-              className="link text-sm font-thin tracking-widest sm:text-lg"
-            >
-              <h6>{title}</h6>
-            </Link>
+            <motion.div key={type} variants={itemVariants}>
+              <Link
+                href={url}
+                className="link text-sm font-thin tracking-widest sm:text-lg"
+              >
+                <h6>{title}</h6>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         {/* Copyright */}
         <h6 className="absolute bottom-0 w-full text-center text-smooth-gray max-sm:text-xs">
           Copyright &copy; 2024 armangohari.com
