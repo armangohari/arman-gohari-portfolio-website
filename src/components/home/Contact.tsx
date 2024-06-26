@@ -4,45 +4,61 @@ import {
   containerVariants,
   itemVariants,
 } from "@/lib/framerAnimationConstants";
+import {
+  github,
+  instagram,
+  linkedin,
+  mail,
+  telegram,
+  twitter,
+} from "@/lib/icons";
 import { motion } from "framer-motion";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import Section from "../utilities/Section";
 
 type contactType = {
   type: string;
-  title: string;
+  icon: StaticImageData;
+  id: string;
   url: string;
 };
 
 const contacts: contactType[] = [
   {
     type: "Email",
-    title: "hello@armangohari.com",
+    icon: mail,
+    id: "hello@armangohari.com",
     url: "mailto:hello@armangohari.com",
   },
   {
     type: "Linkedin",
-    title: "linkedin.com / armangohari",
+    icon: linkedin,
+    id: "armangohari",
     url: "https://linkedin.com/in/armangohari",
   },
   {
     type: "Github",
-    title: "github.com / armangohari",
+    icon: github,
+    id: "armangohari",
     url: "https://github.com/armangohari",
   },
   {
     type: "Telegram",
-    title: "telegram.me / armangohari",
+    icon: telegram,
+    id: "armangohari",
     url: "https://telegram.me/armangohari",
   },
   {
     type: "Instagram",
-    title: "instagram.com / armanigohari",
+    icon: instagram,
+    id: "armanigohari",
     url: "https://instagram.com/armanigohari",
   },
   {
-    type: "X",
-    title: "x.com / armanigohari",
+    type: "Twitter",
+    icon: twitter,
+    id: "armanigohari",
     url: "https://x.com/armanigohari",
   },
 ];
@@ -59,13 +75,15 @@ export default function Contact() {
           variants={containerVariants}
         >
           {/* Contacts */}
-          {contacts.map(({ type, title, url }: contactType) => (
+          {contacts.map(({ type, icon, id, url }: contactType) => (
             <motion.div key={type} variants={itemVariants}>
               <Link
                 href={url}
-                className="link text-sm font-thin tracking-widest sm:text-lg"
+                className="link flex items-center justify-center gap-2 text-sm font-thin tracking-widest sm:text-lg"
               >
-                <h6>{title}</h6>
+                <h6>{type}</h6>
+                <Image src={icon} alt={type} className="border-smooth-white" />
+                <h6>{id}</h6>
               </Link>
             </motion.div>
           ))}
