@@ -22,8 +22,8 @@ const interestStack: interestStackType[] = [
   {
     title: "Technology",
     interests: [
-      "Virtual Reality",
-      "Augmented Reality",
+      "AR / VR",
+      "Mixed Reality",
       "Artificial Intelligence",
     ],
   },
