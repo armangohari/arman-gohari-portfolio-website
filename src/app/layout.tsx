@@ -1,12 +1,17 @@
 import { poppins } from "@/lib/fonts";
 import "@/styles/globals.css";
 import { cn } from "@/utils/helpers";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  userScalable: false,
+};
 
 export const metadata: Metadata = {
   title: "Arman Gohari - Portfolio Website",
   description:
-    "Explore the portfolio of Arman Gohari. Showcasing his skills, interests, tools and contact information. Get to know him more now!",
+    "Explore the portfolio of Arman Gohari. Showcasing his skills, interests, tools and contact information. Get to know me more now!",
   keywords: [
     "Arman Gohari",
     "Arman Gohari Website",
@@ -30,9 +35,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://armangohari.com",
-    title: "Arman Gohari",
-    description: "Arman Gohari Portfolio Website",
-    siteName: "Arman Gohari Portfolio",
+    title: "Arman Gohari - Portfolio Website",
+    description:
+      "Explore the portfolio of Arman Gohari. Showcasing his skills, interests, tools and contact information. Get to know me more now!",
+    siteName: "Arman Gohari",
   },
 };
 
