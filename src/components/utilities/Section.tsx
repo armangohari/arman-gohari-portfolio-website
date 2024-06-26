@@ -23,7 +23,7 @@ export default function Section({
   return (
     <section className="relative h-[100dvh] w-full">
       {/* Desktop Tab Navigation - Left Side */}
-      <aside className="absolute bottom-0 left-10 top-0 grid place-items-center max-sm:hidden">
+      <aside className="absolute bottom-0 left-10 top-0 grid place-items-center max-xl:hidden">
         <Navigation tabId={tabId} />
       </aside>
 
@@ -64,8 +64,8 @@ export default function Section({
           {children}
         </motion.main>
 
-        {/* Mobile Tab Navigation - Left Side */}
-        <footer className="absolute bottom-[2vh] left-0 right-0 sm:hidden">
+        {/* Mobile & Tablet Tab Navigation - Left Side */}
+        <footer className="absolute bottom-[2vh] left-0 right-0 xl:hidden">
           <Navigation tabId={tabId} />
         </footer>
       </main>
