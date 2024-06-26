@@ -37,7 +37,7 @@ export default function Hero() {
           className="absolute bottom-[35vh] right-[10vw] sm:bottom-[2vh] sm:right-10"
           initial={{ opacity: 0, x: 25 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
         >
           Gohari
         </motion.h1>
@@ -48,7 +48,7 @@ export default function Hero() {
         className="absolute bottom-[5vh] left-[10vw] sm:bottom-0 sm:left-0 sm:p-10"
         initial={{ opacity: 0, x: -25 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1.5, ease: "easeInOut" }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
         viewport={{ amount: 0.1 }}
       >
         <h2 className="text-smooth-gray sm:text-xl">
