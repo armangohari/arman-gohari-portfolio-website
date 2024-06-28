@@ -28,7 +28,7 @@ export default function Section({
         className="fixed right-0 top-0 p-[2vh]"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.75, ease: "easeInOut" }}
+        transition={{ duration: 0.25, ease: "easeOut" }}
         viewport={{ amount: 0.1 }}
       >
         <BackgroundMusicPlayer />
