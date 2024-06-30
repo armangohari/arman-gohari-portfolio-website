@@ -17,16 +17,16 @@ const config: Config = {
       keyframes: {
         orbit: {
           from: {
-            transform: "rotate(0deg) translateX(75%) rotate(0deg)",
+            transform: "rotate(0deg) translateX(100%) rotate(0deg)",
           },
           to: {
-            transform: "rotate(360deg) translateX(75%) rotate(-360deg)",
+            transform: "rotate(360deg) translateX(100%) rotate(-360deg)",
           },
         },
       },
       animation: {
-        orbit: "orbit 2.8s linear infinite forwards",
-        "orbit-delayed": "orbit 3.6s linear infinite backwards",
+        orbit: "orbit 4.1s linear infinite forwards",
+        "orbit-delayed": "orbit 5.3s linear infinite forwards",
       },
     },
   },

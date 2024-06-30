@@ -5,7 +5,10 @@ import Section from "../utilities/Section";
 import Link from "next/link";
 import { cn } from "@/utils/helpers";
 import { motion } from "framer-motion";
-import { containerVariants, itemVariants } from "@/lib/framerAnimationConstants";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/lib/framerAnimationConstants";
 
 type projectType = {
   id: number;
@@ -54,13 +57,18 @@ export default function Projects() {
         {projects.map(({ id, image, title, desc, url }: projectType) => (
           <motion.div
             key={id}
-            className="grid h-[21.5vh] w-full place-items-center rounded-xl bg-black/20 sm:h-[60vh]"
+            className="bg-red bg-gray-90 relative grid h-[21.5vh] w-full place-items-center overflow-hidden rounded-xl p-px sm:h-[60vh]"
             variants={itemVariants}
           >
-            <span className="animate-pulse text-smooth-gray max-sm:text-sm sm:rotate-[-30deg]">
-              Coming Soon
-            </span>
-            {/* <Link href={url}>
+            {/* Inner Container */}
+            <div className="bg-gray-90 relative z-10 flex h-full w-full animate-pulse items-center justify-center gap-1.5 rounded-xl bg-smooth-black/30 px-6 py-6">
+              {/* Temporary Coming Soon Text */}
+              <span className="text-smooth-gray max-sm:text-sm sm:rotate-[-30deg]">
+                Coming Soon
+              </span>
+
+              {/* Project Contents */}
+              {/* <Link href={url}>
               // Project Image
               <Image src={image} alt="" />
               // Project Title
@@ -68,6 +76,11 @@ export default function Projects() {
               // Project Description
               <p>{desc}</p>
             </Link> */}
+            </div>
+
+            {/* Circular Motion Orbs */}
+            <div className="absolute animate-orbit rounded-full bg-primary/10 p-40 blur-[100px]" />
+            <div className="absolute animate-orbit-delayed rounded-full bg-primary/10 p-40 blur-[100px]" />
           </motion.div>
         ))}
       </motion.div>
