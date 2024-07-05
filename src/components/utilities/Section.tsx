@@ -24,9 +24,14 @@ export default function Section({
   return (
     <section className="relative h-[100dvh] w-full">
       {/* Music Player - Top Right */}
-      <aside className="fixed right-0 top-0 p-[2vh]">
+      <motion.aside
+        className="fixed right-0 top-0 p-[2vh]"
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.75, ease: "easeInOut" }}
+      >
         <BackgroundMusicPlayer />
-      </aside>
+      </motion.aside>
 
       {/* Desktop Tab Navigation - Left Side */}
       <aside className="absolute bottom-0 left-10 top-0 grid place-items-center max-xl:hidden">
