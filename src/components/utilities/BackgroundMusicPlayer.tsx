@@ -11,7 +11,13 @@ export default function BackgroundMusicPlayer() {
   function handleMusicPlayPause() {
     const audioElement = audioRef.current;
     if (!audioElement) return;
-    setIsPlaying(!isPlaying);
+    if (isPlaying) {
+      setIsPlaying(false);
+      audioElement.pause();
+    } else {
+      setIsPlaying(true);
+      audioElement.play();
+    }
   }
 
   return (
