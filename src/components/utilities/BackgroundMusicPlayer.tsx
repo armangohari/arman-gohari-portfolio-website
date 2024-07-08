@@ -1,40 +1,17 @@
 "use client";
 
 import { cn } from "@/utils/helpers";
-import lottie from "lottie-web";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 export default function BackgroundMusicPlayer() {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   const audioRef = useRef<HTMLAudioElement>(null);
-  const lottieRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (lottieRef.current) {
-      lottie.loadAnimation({
-        container: lottieRef.current,
-        path: "/assets/animations/sound-wave.json",
-        renderer: "svg",
-        autoplay: false,
-        loop: true,
-      });
-    }
-  }, []);
 
   function handleMusicPlayPause() {
     const audioElement = audioRef.current;
     if (!audioElement) return;
-
-    if (isPlaying) {
-      setIsPlaying(false);
-      lottie.pause();
-      audioElement.pause();
-    } else {
-      setIsPlaying(true);
-      lottie.play();
-      audioElement.play();
-    }
+    setIsPlaying(!isPlaying);
   }
 
   return (
@@ -49,10 +26,34 @@ export default function BackgroundMusicPlayer() {
 
       {/* Play/Pause Button */}
       <button
-        className={cn("w-12 xl:w-16", !isPlaying && "animate-pulse")}
+        className={cn(
+          "flex h-12 w-12 items-center justify-center gap-1 xl:scale-125",
+          "*:h-1 *:w-1 *:rounded-[1px] *:bg-smooth-white",
+          !isPlaying && "animate-pulse",
+        )}
         onClick={handleMusicPlayPause}
       >
-        <div ref={lottieRef}></div>
+        {/* Audio Wave Particles */}
+        <span
+          className={
+            isPlaying ? "animate-expand-1-active" : "animate-expand-1-inactive"
+          }
+        />
+        <span
+          className={
+            isPlaying ? "animate-expand-4-active" : "animate-expand-4-inactive"
+          }
+        />
+        <span
+          className={
+            isPlaying ? "animate-expand-3-active" : "animate-expand-3-inactive"
+          }
+        />
+        <span
+          className={
+            isPlaying ? "animate-expand-2-active" : "animate-expand-2-inactive"
+          }
+        />
       </button>
     </>
   );
