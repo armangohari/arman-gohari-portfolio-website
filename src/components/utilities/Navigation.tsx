@@ -5,7 +5,7 @@ type NavigationProps = {
 };
 
 export default function Navigation({ tabId }: NavigationProps) {
-  const numOfSections = 4;
+  const numOfSections = 3;
 
   return (
     <nav className="flex items-center justify-center gap-2 xl:flex-col xl:gap-3">

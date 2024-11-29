@@ -9,7 +9,7 @@ export default function Home() {
     <main className="h-[100dvh] w-full snap-y snap-mandatory overflow-x-hidden overflow-y-scroll scroll-smooth *:snap-start">
       <Hero />
       <About />
-      <Projects />
+      {/* <Projects /> */}
       <Tools />
       <Contact />
     </main>

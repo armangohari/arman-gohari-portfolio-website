@@ -39,7 +39,7 @@ const toolStack: toolStackType[] = [
 
 export default function Tools() {
   return (
-    <Section title="Tools" orbDirection="right" tabId={3}>
+    <Section title="Tools" orbDirection="left" tabId={2}>
       {/* Tools Showcase */}
       <motion.div
         className="mt-[7vh] grid w-full grid-cols-3 items-start justify-between gap-[7vw] gap-y-[7vh] sm:mt-[15vh] sm:flex"
