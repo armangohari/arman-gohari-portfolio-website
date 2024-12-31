@@ -90,7 +90,7 @@ export default function Contact() {
         </motion.div>
         {/* Copyright */}
         <h6 className="absolute bottom-0 w-full text-center text-smooth-gray max-sm:text-xs">
-          Copyright &copy; 2024 armangohari.com
+          Copyright &copy; 2025 armangohari.com
         </h6>
       </div>
     </Section>
