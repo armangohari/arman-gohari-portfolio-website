@@ -55,7 +55,7 @@ export default function Hero() {
         <h2 className="text-smooth-gray sm:text-xl">
           Founder of{" "}
           <Link
-            href="https://aramito.life"
+            href="https://aramito.com"
             className="animate-pulse font-medium"
           >
             Aramito
