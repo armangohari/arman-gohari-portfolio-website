@@ -4,7 +4,7 @@ import { italiana } from "@/lib/fonts";
 import {
   containerVariants,
   itemVariants,
-} from "@/lib/framerAnimationConstants";
+} from "@/constants/framerAnimationConstants";
 import { cn } from "@/utils/helpers";
 import { motion } from "framer-motion";
 import Section from "../utilities/Section";

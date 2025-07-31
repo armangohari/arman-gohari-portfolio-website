@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import {
   containerVariants,
   itemVariants,
-} from "@/lib/framerAnimationConstants";
+} from "@/constants/framerAnimationConstants";
 
 type projectType = {
   id: number;

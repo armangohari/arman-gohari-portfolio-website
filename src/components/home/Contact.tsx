@@ -3,7 +3,7 @@
 import {
   containerVariants,
   itemVariants,
-} from "@/lib/framerAnimationConstants";
+} from "@/constants/framerAnimationConstants";
 import {
   github,
   instagram,
