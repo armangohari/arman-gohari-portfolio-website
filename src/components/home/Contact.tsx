@@ -79,7 +79,7 @@ export default function Contact() {
             <motion.div key={type} variants={itemVariants}>
               <Link
                 href={url}
-                className="link flex items-center justify-center gap-2 text-sm font-thin tracking-widest sm:text-lg"
+                className="flex items-center justify-center gap-2 text-sm font-thin tracking-widest transition-all hover:scale-105 hover:font-extralight hover:brightness-125 active:scale-95 active:font-thin active:brightness-75 sm:text-lg"
               >
                 <h6>{type}</h6>
                 <Image src={icon} alt={type} />
@@ -89,7 +89,7 @@ export default function Contact() {
           ))}
         </motion.div>
         {/* Copyright */}
-        <h6 className="absolute bottom-0 w-full text-center text-smooth-gray max-sm:text-xs">
+        <h6 className="text-smooth-gray absolute bottom-0 w-full text-center max-sm:text-xs">
           Copyright &copy; 2025 armangohari.com
         </h6>
       </div>

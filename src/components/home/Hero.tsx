@@ -15,7 +15,7 @@ export default function Hero() {
       </aside>
 
       {/* Middle Left Orb */}
-      <aside className="absolute -left-10 top-72 max-sm:scale-75">
+      <aside className="absolute top-72 -left-10 max-sm:scale-75">
         <HeroOrb />
       </aside>
 
@@ -27,7 +27,7 @@ export default function Hero() {
         )}
       >
         <motion.h1
-          className="absolute left-[10vw] top-[30vh] sm:left-10 sm:top-[2vh]"
+          className="absolute top-[30vh] left-[10vw] sm:top-[2vh] sm:left-10"
           initial={{ opacity: 0, x: -25 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
@@ -35,7 +35,7 @@ export default function Hero() {
           Arman
         </motion.h1>
         <motion.h1
-          className="absolute bottom-[35vh] right-[10vw] sm:bottom-[2vh] sm:right-10"
+          className="absolute right-[10vw] bottom-[35vh] sm:right-10 sm:bottom-[2vh]"
           initial={{ opacity: 0, x: 25 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.5, ease: "easeInOut" }}

@@ -34,7 +34,7 @@ export default function BackgroundMusicPlayer() {
       <button
         className={cn(
           "flex h-12 w-12 items-center justify-center gap-1 xl:scale-125",
-          "*:h-1 *:w-1 *:rounded-[1px] *:bg-smooth-white",
+          "*:bg-smooth-white *:h-1 *:w-1 *:rounded-[1px]",
           !isPlaying && "animate-pulse",
         )}
         onClick={handleMusicPlayPause}

@@ -57,11 +57,11 @@ export default function Projects() {
         {projects.map(({ id, image, title, desc, url }: projectType) => (
           <motion.div
             key={id}
-            className="bg-red bg-gray-90 relative grid h-[21.5vh] w-full place-items-center overflow-hidden rounded-xl p-px sm:h-[60vh]"
+            className="relative grid h-[21.5vh] w-full place-items-center overflow-hidden rounded-xl bg-gray-900 p-px sm:h-[60vh]"
             variants={itemVariants}
           >
             {/* Inner Container */}
-            <div className="bg-gray-90 relative z-10 flex h-full w-full animate-pulse items-center justify-center gap-1.5 rounded-xl bg-smooth-black/30 px-6 py-6">
+            <div className="bg-smooth-black/30 relative z-10 flex h-full w-full animate-pulse items-center justify-center gap-1.5 rounded-xl px-6 py-6">
               {/* Temporary Coming Soon Text */}
               <span className="text-smooth-gray max-sm:text-sm sm:rotate-[-30deg]">
                 Coming Soon
@@ -79,8 +79,8 @@ export default function Projects() {
             </div>
 
             {/* Circular Motion Orbs */}
-            <div className="absolute animate-orbit rounded-full bg-primary/10 p-40 blur-[100px]" />
-            <div className="absolute animate-orbit-delayed rounded-full bg-primary/10 p-40 blur-[100px]" />
+            <div className="animate-orbit bg-primary/10 absolute rounded-full p-40 blur-[100px]" />
+            <div className="animate-orbit-delayed bg-primary/10 absolute rounded-full p-40 blur-[100px]" />
           </motion.div>
         ))}
       </motion.div>

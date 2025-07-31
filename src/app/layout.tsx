@@ -52,7 +52,7 @@ export default function RootLayout({
       <body
         className={cn(
           poppins.className,
-          "bg-smooth-black font-extralight tracking-wider text-smooth-white",
+          "bg-smooth-black text-smooth-white font-extralight tracking-wider",
         )}
       >
         {children}

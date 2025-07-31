@@ -1,18 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Root Variables */
-:root {
-  --primary: #00ffff;
-  --smooth-black: #0e0e0e;
-  --smooth-gray: #999999;
-  --smooth-white: #eeeeee;
+@theme {
+  --color-primary: #00ffff;
+  --color-smooth-black: #0e0e0e;
+  --color-smooth-gray: #999999;
+  --color-smooth-white: #eeeeee;
 }
 
 /* Text Selection */
 ::selection {
-  color: var(--primary);
+  color: var(--color-primary);
   background-color: transparent;
 }
 
@@ -21,7 +18,124 @@
   scrollbar-width: none;
 }
 
-/* Links */
-.link {
-  @apply transition-all hover:scale-105 hover:font-extralight hover:brightness-125 active:scale-95 active:font-thin active:brightness-75;
+/* Animations */
+@keyframes expand-inactive {
+  0% {
+    transform: scaleY(1);
+  }
+  10% {
+    transform: scaleY(2);
+  }
+  20% {
+    transform: scaleY(1);
+  }
+  30% {
+    transform: scaleY(1);
+  }
+  40% {
+    transform: scaleY(2);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  60% {
+    transform: scaleY(1);
+  }
+  70% {
+    transform: scaleY(2);
+  }
+  80% {
+    transform: scaleY(1);
+  }
+  90% {
+    transform: scaleY(2);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes expand-active {
+  0% {
+    transform: scaleY(1);
+  }
+  10% {
+    transform: scaleY(3);
+  }
+  20% {
+    transform: scaleY(5);
+  }
+  30% {
+    transform: scaleY(2);
+  }
+  40% {
+    transform: scaleY(5);
+  }
+  50% {
+    transform: scaleY(3);
+  }
+  60% {
+    transform: scaleY(3);
+  }
+  70% {
+    transform: scaleY(5);
+  }
+  80% {
+    transform: scaleY(2);
+  }
+  90% {
+    transform: scaleY(2);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(100%) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(100%) rotate(-360deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbit 4.1s linear infinite forwards;
+}
+
+.animate-orbit-delayed {
+  animation: orbit 5.3s linear infinite forwards;
+}
+
+.animate-expand-1-inactive {
+  animation: expand-inactive 3s linear infinite;
+}
+
+.animate-expand-2-inactive {
+  animation: expand-inactive 2.5s linear infinite;
+}
+
+.animate-expand-3-inactive {
+  animation: expand-inactive 4s linear infinite;
+}
+
+.animate-expand-4-inactive {
+  animation: expand-inactive 5s linear infinite;
+}
+
+.animate-expand-1-active {
+  animation: expand-active 3s linear infinite;
+}
+
+.animate-expand-2-active {
+  animation: expand-active 2.5s linear infinite;
+}
+
+.animate-expand-3-active {
+  animation: expand-active 4s linear infinite;
+}
+
+.animate-expand-4-active {
+  animation: expand-active 5s linear infinite;
 }

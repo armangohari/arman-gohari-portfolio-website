@@ -25,7 +25,7 @@ export default function Section({
     <section className="relative h-[100dvh] w-full">
       {/* Music Player - Top Right */}
       <motion.aside
-        className="fixed right-0 top-0 p-[2vh]"
+        className="fixed top-0 right-0 p-[2vh]"
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.75, ease: "easeInOut" }}
@@ -34,7 +34,7 @@ export default function Section({
       </motion.aside>
 
       {/* Desktop Tab Navigation - Left Side */}
-      <aside className="absolute bottom-0 left-10 top-0 grid place-items-center max-xl:hidden">
+      <aside className="absolute top-0 bottom-0 left-10 grid place-items-center max-xl:hidden">
         <Navigation tabId={tabId} />
       </aside>
       {/* Main Section Container */}
@@ -54,7 +54,7 @@ export default function Section({
         <motion.header
           className={cn(
             italiana.className,
-            "flex w-full items-center justify-center pb-[7vh] pt-[5vh]",
+            "flex w-full items-center justify-center pt-[5vh] pb-[7vh]",
           )}
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ export default function Section({
         </motion.main>
 
         {/* Mobile & Tablet Tab Navigation - Left Side */}
-        <footer className="absolute bottom-[2vh] left-0 right-0 xl:hidden">
+        <footer className="absolute right-0 bottom-[2vh] left-0 xl:hidden">
           <Navigation tabId={tabId} />
         </footer>
       </main>
