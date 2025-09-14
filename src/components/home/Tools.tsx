@@ -29,7 +29,7 @@ const toolStack: toolStackType[] = [
   },
   {
     title: "Databases",
-    tools: ["SQLite", "MongoDB", "PostgreSQL"],
+    tools: ["SQLite", "MongoDB","ArangoDB", "PostgreSQL"],
   },
   {
     title: "Others",
