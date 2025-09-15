@@ -1,6 +1,7 @@
 import { poppins } from "@/lib/fonts";
 import "@/styles/globals.css";
 import { cn } from "@/utils/helpers";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 
 export const viewport: Viewport = {
@@ -49,6 +50,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* Vercel Speed Insights */}
+      <SpeedInsights />
+
       <body
         className={cn(
           poppins.className,
