@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+/* Premium gradients */
+.bg-radial-gradient {
+  background: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 0%, var(--color-smooth-black) 100%);
+}
+
+/* Grain texture overlay */
+.grain-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  z-index: 9999;
+}
+
 @theme {
   --color-primary: #00ffff;
   --color-smooth-black: #0e0e0e;
@@ -138,4 +154,25 @@
 
 .animate-expand-4-active {
   animation: expand-active 5s linear infinite;
+}
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }

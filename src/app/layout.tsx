@@ -2,6 +2,7 @@ import { poppins } from "@/lib/fonts";
 import "@/styles/globals.css";
 import { cn } from "@/utils/helpers";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import SmoothScroll from "@/components/smooth-scroll";
 import type { Metadata, Viewport } from "next";
 
 export const viewport: Viewport = {
@@ -56,10 +57,10 @@ export default function RootLayout({
       <body
         className={cn(
           poppins.className,
-          "bg-smooth-black text-smooth-white font-extralight tracking-wider",
+          "bg-smooth-black text-smooth-white overflow-x-hidden font-extralight tracking-wider",
         )}
       >
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );

@@ -37,3 +37,6 @@ yarn-error.log*
 
 # vscode
 /.vscode/
+
+# next.js
+./next-env.d.ts
