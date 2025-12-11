@@ -106,7 +106,7 @@ export default function About() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-smooth-black px-6 py-32 text-smooth-white md:px-16 md:py-48"
+      className="relative w-full px-6 py-32 text-smooth-white md:px-16 md:py-48"
     >
       {/* Section header */}
       <div className="mx-auto mb-24 max-w-5xl text-center md:mb-32">

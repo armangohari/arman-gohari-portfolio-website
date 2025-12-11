@@ -24,13 +24,13 @@ export default function ScrollBeam() {
       strokeDashoffset: pathLength,
     });
 
-    // Animate the path on scroll
+    // Animate the path on scroll - true = perfect 1:1 sync, smooth = interpolation
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 80%",
-        end: "bottom 20%",
-        scrub: 1.5,
+        start: "top center",
+        end: "bottom center",
+        scrub: true, // Perfect 1:1 sync with scroll
       },
     });
 
@@ -47,7 +47,7 @@ export default function ScrollBeam() {
   return (
     <div
       ref={containerRef}
-      className="pointer-events-none absolute inset-0 z-20 overflow-visible"
+      className="pointer-events-none absolute inset-0 z-[1] overflow-visible"
     >
       <svg
         className="h-full w-full"
@@ -56,59 +56,87 @@ export default function ScrollBeam() {
         style={{ overflow: "visible" }}
       >
         <defs>
-          {/* Glow filter */}
-          <filter id="beam-glow" x="-100%" y="-100%" width="300%" height="300%">
-            <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+          {/* Large soft glow filter */}
+          <filter id="beam-glow-soft" x="-200%" y="-200%" width="500%" height="500%">
+            <feGaussianBlur stdDeviation="4" result="blur1" />
             <feMerge>
-              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="blur1" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+
+          {/* Tighter glow for the core */}
+          <filter id="beam-glow-core" x="-100%" y="-100%" width="300%" height="300%">
+            <feGaussianBlur stdDeviation="1.5" result="blur2" />
+            <feMerge>
+              <feMergeNode in="blur2" />
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
 
           {/* Gradient for the beam */}
           <linearGradient id="beam-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#00ffff" stopOpacity="0.5" />
-            <stop offset="50%" stopColor="#00ffff" stopOpacity="1" />
-            <stop offset="100%" stopColor="#00ffff" stopOpacity="0.5" />
+            <stop offset="0%" stopColor="#00ffff" stopOpacity="0.2" />
+            <stop offset="20%" stopColor="#00ffff" stopOpacity="0.8" />
+            <stop offset="80%" stopColor="#00ffff" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#00ffff" stopOpacity="1" />
           </linearGradient>
         </defs>
 
-        {/* Glow layer - thick for visibility */}
+        {/* Outer soft glow - very dispersed */}
+        <path
+          d="M 50 0
+             Q 50 3, 35 8
+             Q 10 15, 15 25
+             Q 20 35, 60 42
+             Q 100 50, 85 60
+             Q 70 70, 35 80
+             Q 0 90, 50 100"
+          fill="none"
+          stroke="#00ffff"
+          strokeWidth="2"
+          strokeLinecap="round"
+          filter="url(#beam-glow-soft)"
+          opacity="0.15"
+        />
+
+        {/* Main glow layer */}
         <path
           ref={glowRef}
           d="M 50 0
-             Q 50 5, 25 12
-             Q 0 19, 20 28
-             Q 40 37, 75 45
-             Q 110 53, 80 62
-             Q 50 71, 20 80
-             Q -10 89, 50 100"
+             Q 50 3, 35 8
+             Q 10 15, 15 25
+             Q 20 35, 60 42
+             Q 100 50, 85 60
+             Q 70 70, 35 80
+             Q 0 90, 50 100"
           fill="none"
           stroke="#00ffff"
-          strokeWidth="1"
+          strokeWidth="0.8"
           strokeLinecap="round"
-          filter="url(#beam-glow)"
-          opacity="0.4"
+          filter="url(#beam-glow-core)"
+          opacity="0.5"
         />
 
-        {/* Main beam path */}
+        {/* Core beam path - brightest */}
         <path
           ref={pathRef}
           d="M 50 0
-             Q 50 5, 25 12
-             Q 0 19, 20 28
-             Q 40 37, 75 45
-             Q 110 53, 80 62
-             Q 50 71, 20 80
-             Q -10 89, 50 100"
+             Q 50 3, 35 8
+             Q 10 15, 15 25
+             Q 20 35, 60 42
+             Q 100 50, 85 60
+             Q 70 70, 35 80
+             Q 0 90, 50 100"
           fill="none"
           stroke="url(#beam-gradient)"
-          strokeWidth="0.4"
+          strokeWidth="0.3"
           strokeLinecap="round"
         />
       </svg>
     </div>
   );
 }
+
 
 

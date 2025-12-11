@@ -214,7 +214,7 @@ export default function Gallery() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full bg-smooth-black px-6 py-32 text-smooth-white md:px-16 md:py-48"
+      className="relative w-full px-6 py-32 text-smooth-white md:px-16 md:py-48"
     >
       {/* Section header */}
       <div className="mb-24 flex flex-col items-center justify-center md:mb-32">

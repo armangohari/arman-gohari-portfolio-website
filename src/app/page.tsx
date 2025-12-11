@@ -12,10 +12,10 @@ export default function Home() {
       <Hero />
       
       {/* Beam pathway container - starts after Hero, ends before Contact */}
-      <div className="relative">
+      <div className="relative bg-smooth-black">
         <ScrollBeam />
         
-        <div className="relative z-10">
+        <div className="relative z-[2]">
           <Intro />
           <Gallery />
           <Skills />

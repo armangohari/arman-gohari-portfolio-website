@@ -40,7 +40,7 @@ export default function Intro() {
   return (
     <section
       ref={container}
-      className="bg-smooth-black flex min-h-[50vh] w-full items-center justify-center px-8 py-24 md:py-32"
+      className="flex min-h-[50vh] w-full items-center justify-center px-8 py-24 md:py-32"
     >
       <p
         ref={textRef}
