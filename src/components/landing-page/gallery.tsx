@@ -221,7 +221,7 @@ export default function Gallery() {
         <span className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-primary">
           Featured Project
         </span>
-        <h2 className="text-xs font-bold uppercase tracking-[0.2em] opacity-50">
+        <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400">
           Selected Works
         </h2>
       </div>

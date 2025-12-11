@@ -107,7 +107,7 @@ export default function Contact() {
       </div>
 
       <div className="relative z-10 mb-16 flex flex-col items-center justify-center md:mb-24">
-        <h2 className="text-xs font-bold uppercase tracking-[0.2em] opacity-50">
+        <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400">
           Get in Touch
         </h2>
         <h3
@@ -132,19 +132,19 @@ export default function Contact() {
                 icon={contact.icon}
                 width="24"
                 height="24"
-                className="text-gray-500 transition-colors group-hover:text-primary"
+                className="text-gray-400 transition-colors group-hover:text-primary"
               />
               <span className="text-lg font-light">{contact.type}</span>
             </div>
-            <span className="text-xs uppercase tracking-widest text-gray-600 transition-colors group-hover:text-primary">
+            <span className="text-xs uppercase tracking-widest text-gray-400 transition-colors group-hover:text-primary">
               {contact.id}
             </span>
           </Link>
         ))}
       </div>
 
-      <div className="relative z-10 mt-32 flex w-full flex-col items-center justify-center gap-4 text-center opacity-30">
-        <p className="text-xs uppercase tracking-widest">
+      <div className="relative z-10 mt-32 flex w-full flex-col items-center justify-center gap-4 text-center">
+        <p className="text-xs uppercase tracking-widest text-gray-500">
           Copyright &copy; 2025 armangohari.com
         </p>
       </div>

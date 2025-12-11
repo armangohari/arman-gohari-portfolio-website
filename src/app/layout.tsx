@@ -7,7 +7,9 @@ import type { Metadata, Viewport } from "next";
 
 export const viewport: Viewport = {
   width: "device-width",
-  userScalable: false,
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 };
 
 export const metadata: Metadata = {

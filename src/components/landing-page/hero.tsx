@@ -73,7 +73,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-12 left-1/2 flex -translate-x-1/2 flex-col items-center gap-3 opacity-40 transition-opacity hover:opacity-70">
+      <div className="absolute bottom-12 left-1/2 flex -translate-x-1/2 flex-col items-center gap-3 opacity-70 transition-opacity hover:opacity-100">
         <span className="text-xs tracking-[0.4em] uppercase">Scroll</span>
         <div className="h-12 w-px bg-gradient-to-b from-white to-transparent" />
       </div>
