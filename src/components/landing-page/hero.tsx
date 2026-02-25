@@ -68,7 +68,7 @@ export default function Hero() {
           ref={subtitleRef}
           className="max-w-lg text-sm font-light tracking-[0.3em] text-gray-400 uppercase md:text-base"
         >
-          Startup Founder · Product Designer · Developer
+          Startup Founder · Product Designer · Engineer
         </p>
       </div>
 
