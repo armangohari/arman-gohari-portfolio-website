@@ -145,7 +145,7 @@ export default function Contact() {
 
       <div className="relative z-10 mt-32 flex w-full flex-col items-center justify-center gap-4 text-center">
         <p className="text-xs uppercase tracking-widest text-gray-500">
-          Copyright &copy; 2025 armangohari.com
+          Copyright &copy; 2026 armangohari.com
         </p>
       </div>
     </footer>
