@@ -1,8 +1,6 @@
-export default async function sitemap() {
-  return [
-    {
-      url: "https://armangohari.com",
-      lastModified: new Date(),
-    },
-  ];
+import type { MetadataRoute } from "next";
+import { site } from "@/content/story";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [{ url: site.url, changeFrequency: "monthly", priority: 1 }];
 }

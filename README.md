@@ -1,51 +1,51 @@
-# Arman Gohari Portfolio Website
+# Arman Gohari — Portfolio
 
-Welcome to the official repository for the Arman Gohari Portfolio Website.
+**armangohari.com** · one page, one story.
 
-## Description
+A _gohari_ is a jeweller: someone who finds the gem inside a rough stone. The site tells Arman's path as exactly that — a stone being cut.
 
-Explore the portfolio of Arman Gohari at [armangohari.com](https://armangohari.com).
+| Chapter             | What it covers                                      |
+| ------------------- | --------------------------------------------------- |
+| Prologue            | The name, and who is telling the story              |
+| I · The Rough       | Curiosity, interests, a computer-engineering degree |
+| II · The Cut        | Arelia AI → Karlancer → Aramito → LeviTutor         |
+| III · The Brilliant | Aramito and LeviTutor in depth, and other work      |
+| IV · The Polish     | The four Cs, the toolkit, the University of Tehran  |
+| V · The Setting     | Contact                                             |
 
-## Features
+## How it is built
 
-- **High Performance:** Leveraging Next.js for fast page loads and optimal user experience.
-- **SEO Optimized:** Built with best practices in SEO to help our site rank higher in search engine results.
-- **Responsive Design:** Crafted to provide an optimal viewing experience across a wide range of devices.
+- **Next.js 16 · React 19 · Tailwind CSS 4 · TypeScript 7**
+- **The gem** is ~112 triangles drawn by a hand-written WebGL 1 renderer
+  (`src/components/stage/gem`). No 3D library. A procedural “studio” is sampled
+  in the fragment shader instead of an environment map, and the rough stone and
+  the cut stone share one topology so the morph is a single uniform.
+- **The stage** (`src/components/stage/Stage.tsx`) flies the gem between empty
+  layout boxes marked `data-gem-slot`, so its position at every breakpoint is
+  decided by CSS, not by coordinates in code.
+- **Liquid glass** (`src/lib/liquid-glass`, `.glass*` in `globals.css`) is ported
+  from Aramito: CSS material first, an SVG refraction lens added at idle on
+  Chromium, and a device tier (`<html data-glass-tier>`) that drops backdrop
+  blur on low-end hardware.
+- **Motion** (`src/components/stage/Motion.tsx`) is GSAP ScrollTrigger +
+  SplitText, with Lenis for wheel smoothing on desktop only. Every tween moves
+  `transform` and `opacity` only. `prefers-reduced-motion` turns all of it off.
+- **Icons** are [Hugeicons](https://hugeicons.com) (free set).
+- **All copy** lives in `src/content/story.ts`.
 
-## Tech Stack & Tools
+## Develop
 
-This project is built with the following technologies and tools:
-
-![](https://img.shields.io/badge/Next.js-14.2.3-white)
-![](https://img.shields.io/badge/React-18.0-blue)
-![](https://img.shields.io/badge/Tailwindcss-3.4.1-navy)
-![](https://img.shields.io/badge/Figma-orange)
-
-## Getting Started
-
-To get a local copy up and running, follow these simple steps:
-
-1. Clone the repository:
 ```bash
-git clone https://github.com/armangohari/arman-gohari-portfolio-website.git
+pnpm install
+pnpm dev        # http://localhost:3000
+pnpm lint       # Biome
+pnpm typecheck  # tsc
+pnpm build
 ```
 
-2. Install NPM packages:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-Now, you should be able to see the project running at `http://localhost:3000`.
-
-## Contributing
-
-We welcome contributions from the community. If you have suggestions to improve this project, please fork the repo and create a pull request. Don't forget to give the project a star! Thank you again for your interest in contributing to the Arman Gohari Portfolio Website.
+To preview a device tier on one machine:
+`localStorage.setItem("gohar-glass-tier", "low")` (or `mid` / `high`) and reload.
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+[MIT](./LICENSE)

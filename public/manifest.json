@@ -1,23 +1,16 @@
 {
-  "name": "Arman Gohari - Portfolio Website",
-  "short_name": "Arman Gohari Portfolio",
-  "description": "Explore the portfolio of Arman Gohari. Showcasing his skills, interests, tools and contact information. Get to know him more now!",
+  "name": "Arman Gohari",
+  "short_name": "Arman Gohari",
+  "description": "Founder of Aramito, HealthTech & AI architect and full-stack engineer. The story of a rough stone, cut and polished.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0e0e0e",
-  "theme_color": "#ffa800",
-  "orientation": "portrait",
+  "background_color": "#0b0a08",
+  "theme_color": "#0b0a08",
   "scope": "/",
   "lang": "en-US",
-  "categories": ["portfolio", "personal", "developer", "designer", "brand"],
+  "categories": ["portfolio", "personal"],
   "icons": [
-    {
-      "src": "./favicon.ico",
-      "sizes": "128x128",
-      "type": "image/ico"
-    }
-  ],
-  "related_applications": [],
-  "prefer_related_applications": false,
-  "display_override": ["standalone", "minimal-ui", "dark-theme"]
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/favicon.ico", "sizes": "128x128", "type": "image/x-icon" }
+  ]
 }

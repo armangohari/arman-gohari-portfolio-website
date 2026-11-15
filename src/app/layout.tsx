@@ -1,68 +1,77 @@
-import { poppins } from "@/lib/fonts";
 import "@/styles/globals.css";
-import { cn } from "@/utils/helpers";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import SmoothScroll from "@/components/smooth-scroll";
 import type { Metadata, Viewport } from "next";
+import { site } from "@/content/story";
+import { cn } from "@/lib/cn";
+import { cormorant, italiana, poppins } from "@/lib/fonts";
+import { GLASS_TIER_SCRIPT } from "@/lib/liquid-glass/glassTier";
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  userScalable: true,
+  viewportFit: "cover",
+  themeColor: "#0b0a08",
+  colorScheme: "dark",
 };
 
+const title = "Arman Gohari — Founder, AI Architect & Full-Stack Engineer";
+
 export const metadata: Metadata = {
-  title: "Arman Gohari - Portfolio Website",
-  description:
-    "Explore the portfolio of Arman Gohari. Showcasing his skills, interests, tools and contact information. Get to know me more now!",
+  metadataBase: new URL(site.url),
+  title,
+  description: site.description,
+  alternates: { canonical: "/" },
+  manifest: "/manifest.json",
   keywords: [
     "Arman Gohari",
-    "Arman Gohari Website",
-    "Arman Gohari Portfolio",
-    "Arman Gohari Portfolio Website",
+    "Arman Gohari portfolio",
     "armangohari",
-    "armangohari portfolio",
-    "armangohari website",
-    "armangohari portfolio website",
-    "ArmanGohari",
     "armangohari.com",
-    "ArmanGohari.com",
-    "آرمان گوهری",
-    "وبسایت آرمان گوهری",
-    "سایت آرمان گوهری",
-    "Arman",
-    "Gohari",
-    "آرمان",
-    "گوهری",
+    "Aramito",
+    "Aramito founder",
+    "HealthTech",
+    "AI architect",
+    "full-stack engineer",
+    "LeviTutor",
+    "LeviTutor co-founder",
+    "University of Tehran",
+    "technology entrepreneurship",
   ],
+  authors: [{ name: site.name, url: site.url }],
+  creator: site.name,
   openGraph: {
     type: "website",
-    url: "https://armangohari.com",
-    title: "Arman Gohari - Portfolio Website",
-    description:
-      "Explore the portfolio of Arman Gohari. Showcasing his skills, interests, tools and contact information. Get to know me more now!",
-    siteName: "Arman Gohari",
+    url: site.url,
+    title,
+    description: site.description,
+    siteName: site.name,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description: site.description,
+    creator: "@armanigohari",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      {/* Vercel Speed Insights */}
-      <SpeedInsights />
-
-      <body
-        className={cn(
-          poppins.className,
-          "bg-smooth-black text-smooth-white overflow-x-hidden font-extralight tracking-wider",
-        )}
-      >
-        <SmoothScroll>{children}</SmoothScroll>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn(italiana.variable, cormorant.variable, poppins.variable)}
+    >
+      <head>
+        {/* Decides the device tier and whether motion is welcome, before first paint. */}
+        <script dangerouslySetInnerHTML={{ __html: GLASS_TIER_SCRIPT }} />
+      </head>
+      <body className="overflow-x-clip">
+        {children}
+        <SpeedInsights />
       </body>
     </html>
   );
